@@ -23,3 +23,13 @@ SELECT COUNT(price) FROM products;
 SELECT COUNT(DISTINCT price )FROM products;
 
 #GROUP BY分组的使用
+SELECT brand brandname,AVG(price) avgPrice, COUNT(*) count,AVG(score) avgScore FROM products GROUP BY brand;
+-- 对分组的结果数据再增加一些筛选
+SELECT brand ,AVG(price) AS avgPrice,COUNT(*),AVG(score) FROM products GROUP BY brand HAVING avgPrice>2000;
+
+
+-- 案例
+# 4.需求：求评分score > 7.5的手机的，平均价格是多少？
+SELECT AVG(price) AS avgPrice FROM products WHERE score>7.5;
+# 升级：平均分大于7.5的手机，按照品牌进行分类，求出平均价格。
+SELECT brand, AVG(price) FROM products WHERE score>7.5 GROUP BY brand;
