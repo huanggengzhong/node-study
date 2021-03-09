@@ -1,7 +1,7 @@
 # 聚合函数的使用
 
 # 求所有手机的价格的总和
-SELECT SUM(price) totalPrice FROM products ;
+SELECT SUM(price) AS totalPrice FROM products ;
 
 # 求一下华为手机的价格的总和
 SELECT SUM(price) huaweiPrice FROM products WHERE brand='华为';
@@ -33,3 +33,5 @@ SELECT brand ,AVG(price) AS avgPrice,COUNT(*),AVG(score) FROM products GROUP BY 
 SELECT AVG(price) AS avgPrice FROM products WHERE score>7.5;
 # 升级：平均分大于7.5的手机，按照品牌进行分类，求出平均价格。
 SELECT brand, AVG(price) FROM products WHERE score>7.5 GROUP BY brand;
+
+
