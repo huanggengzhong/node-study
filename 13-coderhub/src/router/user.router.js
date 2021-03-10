@@ -5,7 +5,7 @@ const userRouter = new Router({
 })
 
 userRouter.post("/", (ctx, next) => {
-  console.log("user路由");
+  // console.log("user路由");
 })
 
 module.exports = userRouter;
