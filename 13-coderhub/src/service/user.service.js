@@ -2,7 +2,9 @@
 const connnection = require("./../app/database");
 
 class UserService {
-  getUserByName(name) {}
+  getUserByName(name) {
+    const statement = ``;
+  }
 }
 
 module.exports = new UserService();

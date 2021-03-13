@@ -40,7 +40,7 @@ UPDATE products set brand_id=3 WHERE brand='苹果';
 update products set brand_id=4 WHERE brand='OPPO';
 
 -- 当设置了外键之后下面无法更新
- UPDATE `brand` SET `id` = 101 WHERE `id` = 1;
+ UPDATE `brand` SET `id` = 101 WHERE `id` = 100;
  # 解决方法1:直接改设计表更新为CASCADE,保存后再次执行即可;
  # 解决方法2:语句操作三个步骤:
  show CREATE TABLE products;
