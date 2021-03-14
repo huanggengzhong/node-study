@@ -5,10 +5,10 @@ const userRouter = new Router({
 });
 
 //请求数据判断中间件
-const { verifyUser } = require("../middleware/user.middleware");
+const { verifyUser, handlePassword } = require("../middleware/user.middleware");
 
 // 最后数据处理中间件
 const { create } = require("../controller/user.controller");
-userRouter.post("/", verifyUser, create);
+userRouter.post("/register", verifyUser, handlePassword, create);
 
 module.exports = userRouter;
