@@ -10,6 +10,14 @@ const errorHandle = (error, ctx) => {
       status = 409;
       message = "用户名已存在,无法注册";
       break;
+    case types.USER_DOES_NOT_EXISTS:
+      status = 400;
+      message = "用户不存在,请先注册";
+      break;
+    case types.NAME_OR_PASSWORD_ERROR:
+      status = 400;
+      message = "用户or密码错误";
+      break;
 
     default:
       break;
